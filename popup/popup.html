@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>UI Clone Studio</title>
+  <link rel="stylesheet" href="popup.css" />
+</head>
+<body>
+  <div class="app">
+    <!-- Header -->
+    <header class="header">
+      <div class="logo">
+        <svg width="22" height="22" viewBox="0 0 22 22" fill="none">
+          <rect x="1" y="1" width="9" height="9" rx="2" fill="#2563EB"/>
+          <rect x="12" y="1" width="9" height="9" rx="2" fill="#2563EB" opacity="0.4"/>
+          <rect x="1" y="12" width="9" height="9" rx="2" fill="#2563EB" opacity="0.4"/>
+          <rect x="12" y="12" width="9" height="9" rx="2" fill="#2563EB" opacity="0.7"/>
+        </svg>
+        <span class="logo-text">UI Clone Studio</span>
+      </div>
+      <span class="badge">MVP</span>
+    </header>
+
+    <!-- Status bar -->
+    <div class="status-bar" id="statusBar">
+      <span class="status-dot idle" id="statusDot"></span>
+      <span id="statusText">Ready to capture</span>
+    </div>
+
+    <!-- Main Actions -->
+    <div class="section-label">CAPTURE</div>
+    <div class="action-group">
+      <button class="action-btn primary" id="captureFullBtn">
+        <svg width="16" height="16" viewBox="0 0 16 16" fill="none">
+          <rect x="1" y="1" width="14" height="14" rx="2" stroke="currentColor" stroke-width="1.5"/>
+          <path d="M4 8h8M8 4v8" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"/>
+        </svg>
+        Capture Full Page
+      </button>
+      <button class="action-btn secondary" id="selectSectionBtn">
+        <svg width="16" height="16" viewBox="0 0 16 16" fill="none">
+          <path d="M2 2h4M10 2h4M14 2v4M14 10v4M14 14h-4M6 14H2M2 14v-4M2 6V2" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"/>
+          <circle cx="8" cy="8" r="2" fill="currentColor"/>
+        </svg>
+        Select Section
+      </button>
+    </div>
+
+    <!-- Export Options -->
+    <div class="section-label" id="exportLabel" style="display:none">EXPORT AS</div>
+    <div class="export-grid" id="exportGrid" style="display:none">
+      <button class="export-chip active" data-format="react">React</button>
+      <button class="export-chip" data-format="tailwind">Tailwind</button>
+      <button class="export-chip" data-format="html">HTML/CSS</button>
+      <button class="export-chip" data-format="json">JSON</button>
+    </div>
+
+    <button class="export-btn" id="exportBtn" style="display:none">
+      <svg width="15" height="15" viewBox="0 0 15 15" fill="none">
+        <path d="M7.5 1v9M4 7l3.5 3.5L11 7M2 13h11" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+      </svg>
+      Export Code
+    </button>
+
+    <!-- Design System Preview -->
+    <div class="design-system" id="designSystem" style="display:none">
+      <div class="section-label">DESIGN SYSTEM</div>
+      <div class="ds-row">
+        <span class="ds-label">Colors</span>
+        <div class="color-swatches" id="colorSwatches"></div>
+      </div>
+      <div class="ds-row">
+        <span class="ds-label">Fonts</span>
+        <div class="font-list" id="fontList"></div>
+      </div>
+      <div class="ds-row">
+        <span class="ds-label">Components</span>
+        <div class="component-count" id="componentCount">—</div>
+      </div>
+    </div>
+
+    <!-- Output area -->
+    <div class="output-area" id="outputArea" style="display:none">
+      <div class="output-header">
+        <span class="section-label" style="margin:0">OUTPUT</span>
+        <button class="copy-btn" id="copyBtn">Copy</button>
+      </div>
+      <pre class="code-block" id="codeBlock"></pre>
+    </div>
+
+    <!-- Footer -->
+    <footer class="footer">
+      <span>UI Clone Studio v1.0</span>
+    </footer>
+  </div>
+
+  <script src="popup.js"></script>
+</body>
+</html>
